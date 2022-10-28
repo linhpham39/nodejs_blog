@@ -20,6 +20,12 @@ app.set('view engine', 'hbs');
 console.log('PATH: ', path.join(__dirname, 'resources/views'));
 app.set('views', path.join(__dirname, 'resources/views'));
 
+
+
+//cấu hình cho hình ảnh
+app.use(express.static(path.join(__dirname, 'public')));
+
+
 //định nghĩa route, thêm phần "/"(ở phần get) vào sau link local
 app.get('/', (req, res) => {
   //res.render('home');
