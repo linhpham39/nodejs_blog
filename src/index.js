@@ -8,10 +8,10 @@ const app = express();
 const port = 3000;
 
 //import các route
-const route = require('./routes');
+          const route = require('./routes');
 
 //http logger
-app.use(morgan('combined'));
+        app.use(morgan('combined'));
 
 //template engine: app này sẽ sử dụng template engine là handlebars và set name nó là 'hbs'
 app.engine(
