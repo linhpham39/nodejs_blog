@@ -1,5 +1,5 @@
-const path = require("path");
-const express = require("express");
+const path = require('path');
+const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const { log } = require('console');
@@ -8,17 +8,17 @@ const app = express();
 const port = 3000;
 
 //import các route
-          const route = require('./routes');
+const route = require('./routes');
 
 //http logger
-        app.use(morgan('combined'));
+app.use(morgan('combined'));
 
 //template engine: app này sẽ sử dụng template engine là handlebars và set name nó là 'hbs'
 app.engine(
-  'hbs',
-  handlebars.engine({
-    extname: '.hbs',
-  }),
+    'hbs',
+    handlebars.engine({
+        extname: '.hbs',
+    }),
 );
 app.set('view engine', 'hbs');
 //tìm ra path của thư mục home.handlebars
@@ -28,9 +28,9 @@ app.set('views', path.join(__dirname, 'resources/views'));
 
 //để sử dung middleware
 app.use(
-  express.urlencoded({
-    extended: true,
-  }),
+    express.urlencoded({
+        extended: true,
+    }),
 );
 app.use(express.json());
 
@@ -67,5 +67,5 @@ app.post('/search', (req, res)=>{
 //res: response : sever trả về cho mk
 */
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`);
+    console.log(`Example app listening on port http://localhost:${port}`);
 });
