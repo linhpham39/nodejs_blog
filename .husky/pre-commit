@@ -1,4 +1,0 @@
-#!/usr/bin/env sh
-. "$(src/index.js -- "$0")/_/husky.sh"
-
-npm test
