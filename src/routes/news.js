@@ -3,9 +3,9 @@ var express = require('express');
 const router = express.Router();
 //cau hinh cho path
 const newsController = require('../app/controllers/NewsController');
-router.use('/:slug', newsController.show);
+router.get('/:slug', newsController.show);
 //de cai slug truoc cai / vi tuyen duong se tim kiem tu tren xuong  
-router.use('/', newsController.index);
+router.get('/', newsController.index);
 /*bth laf router.use('/news', (req, res)=>{
     res.render();
 })*/

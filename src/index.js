@@ -10,6 +10,10 @@ const port = 3000;
 //import các route
 const route = require('./routes');
 
+//import mongoose
+const db = require('./config/db');
+//connect to DB
+db.connect();
 //http logger
 app.use(morgan('combined'));
 
@@ -67,5 +71,5 @@ app.post('/search', (req, res)=>{
 //res: response : sever trả về cho mk
 */
 app.listen(port, () => {
-    console.log(`Example app listening on port http://localhost:${port}`);
+    console.log(`App listening on port http://localhost:${port}`);
 });
