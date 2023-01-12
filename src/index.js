@@ -2,7 +2,6 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
-const { log } = require('console');
 //đi vào thư mục node module để gọi thư viện
 const app = express();
 const port = 3000;
